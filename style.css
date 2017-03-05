@@ -25,6 +25,28 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
     text-indent: -99999px;
 }
 
+.section-features .section-title-area h2.section-title {
+    color: #333;
+}
+
+.section-featuredpage h2 a, .section-featuredpage h3 a, .section-featuredpage h4 a {
+    color: #00b1b0;
+    text-decoration: none;
+    text-transform: uppercase !important;
+}
+
+section#paginadestacada {
+    background: #fff !important;
+}
+
+.section-featuredpage h2.section-title {
+	color: #333333;
+}
+
+.section-featuredpage .section-desc {
+	color: #777;
+}
+
 .news-header {
 	background: url('assets/images/cabecalho-blog.jpg') center center no-repeat;
 	min-height: 250px;
@@ -61,12 +83,31 @@ h4.news-subtitle {
     text-transform: uppercase;
 }
 
-#contact {
-	background: url('assets/images/fundo-contato.jpg') center center no-repeat;
-	background-size: cover;
+.section-contact .address-contact .address-content {
+    display: block;
+    padding-left: 45px;
+    font-style: italic;
+    line-height: 2;
+    color: #FFF;
+    font-size: 0.85em;
 }
 
-#contact .container {
+.section-contact .address-contact .address-content a {
+    color: #fff;
+}
+
+.section-contact .address-contact span {
+    float: left;
+    color: #00b1b0;
+}
+
+.section-contact {
+	background: url('assets/images/fundo-contato.jpg') center center no-repeat;
+	background-size: cover;
+	margin-bottom: -70px;
+}
+
+.section-contact .container {
 	background-color: #99CCCC;
 	border: 5px solid #669999;
 	-webkit-box-shadow: 15px 15px 0px 0px rgba(102,153,153,1);
@@ -76,7 +117,7 @@ h4.news-subtitle {
 	width: 80%;
 }
 
-#contact h2.section-title {
+.section-contact h2.section-title {
 	color: #669999;
 }
 
@@ -92,12 +133,17 @@ h4.news-subtitle {
     font-size: 36px;
 }
 
+.site-footer {
+    background-color: #669999;
+}
+
 .container.col-sm-6.footer-info-left {
 	font-family: "Raleway", Helvetica, Arial, sans-serif;
 	font-weight: bold;
 	text-align: left;
 	line-height: 1.8;
 }
+
 .container.col-sm-6.footer-info-right {
 	text-align: right;
 }
@@ -112,7 +158,7 @@ h4.news-subtitle {
     margin-left: 10px;
 }
 
-.footer-info-right span{
+.footer-info-right span {
 	font-family: "Raleway", Helvetica, Arial, sans-serif;
 	font-weight: bold;
 	margin-bottom: 10px;
@@ -132,3 +178,10 @@ h4.news-subtitle {
 	margin-bottom: 10px;
 }
 
+#featured-link {
+    background: #0ca94e !important;
+}
+
+.site-footer .footer-connect {
+    padding: 2rem 0rem;
+}
