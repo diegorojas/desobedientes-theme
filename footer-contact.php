@@ -9,6 +9,42 @@
  * @package OnePress
  */
 ?>
+<?php
+
+do_action( 'onepress_frontpage_before_section_parts' );
+
+if ( ! has_action( 'onepress_frontpage_section_parts' ) ) {
+
+    $sections = apply_filters( 'onepress_frontpage_sections_order', 
+        array('contact')
+        );
+
+    foreach ( $sections as $section ){
+        /**
+         * Hook before section
+         */
+        do_action('onepress_before_section_'.$section );
+        do_action( 'onepress_before_section_part', $section );
+
+        /**
+         * Load section template part
+         */
+        get_template_part( 'section-parts/section', $section );
+
+        /**
+         * Hook after section
+         */
+        do_action('onepress_after_section_part', $section );
+        do_action('onepress_after_section_'.$section );
+    }
+
+} else {
+    do_action( 'onepress_frontpage_section_parts' );
+}
+
+do_action( 'onepress_frontpage_after_section_parts' );
+
+?>
     <footer id="colophon" class="site-footer" role="contentinfo">
         <?php
         $onepress_btt_disable = get_theme_mod('onepress_btt_disable');
@@ -86,7 +122,6 @@
                 </div>
             </div>
         <?php endif; ?>
-
         <div class="site-info">
             <div class="container">
                 <?php if ($onepress_btt_disable != '1') : ?>
@@ -96,7 +131,6 @@
                 <?php endif; ?>
                     <div class="container col-sm-6 footer-info-left">
                         <p><a href="https://desobedientes.com.br/politica-de-privacidade-e-seguranca/" alt="Link para Política de Privacidade e Segurança" target="_blank">POLÍTICA DE PRIVACIDADE E SEGURANÇA</a> | <a href="https://desobedientes.com.br/termos-de-servico/" alt="Link para Termos de Serviço" target="_blank">TERMOS DE SERVIÇO</a></p>
-
                 <?php
                 /**
                  * hooked onepress_footer_site_info
@@ -106,8 +140,8 @@
                 ?>
                     <p>Em caso de divergência de preços, o valor válido é o do Carrinho.</p>
                     </div>
-                   
-                    <div class="container col-sm-6 footer-info-right">  
+                    
+                    <div class="container col-sm-6 footer-info-right">
                         <div class="container footer-info-right">
                             <span>Formas de Pagamento</span>
                             <div class="pagamento"></div>

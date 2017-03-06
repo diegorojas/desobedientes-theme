@@ -104,6 +104,9 @@ h4.news-subtitle {
 .section-contact {
 	background: url('assets/images/fundo-contato.jpg') center center no-repeat;
 	background-size: cover;
+}
+
+.page-template-template-frontpage .section-contact {
 	margin-bottom: -70px;
 }
 
